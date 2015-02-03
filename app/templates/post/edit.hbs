@@ -1,6 +1,12 @@
+<br>
 EDIT IN THE POST FOLDER <br>
-{{title}} <br>
-{{body}}
+<br>this is a little f'ed up...
 <br><br>
 
 This is where your edit form goes!
+<br><br>
+<div>
+  {{input placeholder="Add a title!" value=title }}
+  {{textarea placeholder="Write a note!" value=body }}
+</div>
+<button {{action 'editPosts'}}>Save</button>
