@@ -1,14 +1,19 @@
-{{outlet}}
+<br><br>
+  {{#link-to 'posts.new'}} new {{/link-to}}
+<br>
 
+<!-- ## seemingly able to iterate through each statement without model path
+but then links didnt work.  why is it that including the model path, everything
+appears the same, but it actually works (after including 'post.' to anchor link) -->
 
-        {{input placeholder="Add a title!" value=noteTitle }}
-        {{textarea placeholder="Write a note!" value=noteBody }}
-      <span class = "save fa fa-check-circle" {{action 'newNote'}}></span>
-
-
-
-<br><br><br><br><br>
-    {{#each}}
-      <h2>{{title}}</h2>
-      {{{body}}}<br>
+<div class = "left">
+    {{#each post in model}}
+      <h2>{{#link-to 'post' post}} {{post.title}} {{/link-to}}</h2>
+      {{post.body}}<br>
+      {{#link-to 'post.edit' post}} edit {{/link-to}}<br>
     {{/each}}
+</div>
+
+<div class = "right">
+  {{outlet}}
+</div>
