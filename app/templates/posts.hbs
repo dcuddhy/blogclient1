@@ -1,0 +1,14 @@
+{{outlet}}
+
+
+        {{input placeholder="Add a title!" value=noteTitle }}
+        {{textarea placeholder="Write a note!" value=noteBody }}
+      <span class = "save fa fa-check-circle" {{action 'newNote'}}></span>
+
+
+
+<br><br><br><br><br>
+    {{#each}}
+      <h2>{{title}}</h2>
+      {{{body}}}<br>
+    {{/each}}
