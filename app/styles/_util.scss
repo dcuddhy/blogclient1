@@ -1,0 +1,6 @@
+@mixin span($bg-color: orange) {
+  width: 50%;
+  background: $bg-color;
+  color: gray;
+  float: left;
+}

@@ -7,13 +7,36 @@ but then links didnt work.  why is it that including the model path, everything
 appears the same, but it actually works (after including 'post.' to anchor link) -->
 
 <div class = "left">
-    {{#each post in model}}
-      <h2>{{#link-to 'post' post}} {{post.title}} {{/link-to}}</h2>
-      {{post.body}}<br>
-      {{#link-to 'post.edit' post}} edit {{/link-to}}<br>
-    {{/each}}
+
+  <div class = "left">
+    {{input placeholder="Search!" value=search }}
+    <button {{action 'search'}}>Search</button>
+  </div>
+
+  {{#each post in model}}
+    <h2>{{#link-to 'post' post}} {{post.title}} {{/link-to}}</h2>
+    {{post.body}}<br>
+    {{#link-to 'post.edit' post}} edit {{/link-to}}<br>
+  {{/each}}
+
 </div>
 
 <div class = "right">
   {{outlet}}
 </div>
+
+
+
+##in rails##
+resources :posts do
+  get :search, on ::collection
+end
+########
+
+/posts/search?q=red
+
+if params[:q].present?
+  @posts = Post....
+else
+  @posts = Post.all
+end

@@ -1,5 +1,23 @@
+@import 'colors';
+@import 'typography';
+@import 'util';
+
+/* ### DEMO
+  section{
+    background: rgba($green, 0.2)
+    @include span(yellow)
+  }
+
+
+
+
+
+*/
+
+
 html, body {
   margin: 20px;
+  background: #f7f7f7;
 }
 
 .left, .right {

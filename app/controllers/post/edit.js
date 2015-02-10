@@ -2,7 +2,6 @@ import Ember from "ember";
 
 export default Ember.ObjectController.extend({
   reversedPosts: function () {
-
   },
 
   actions: {
@@ -16,6 +15,6 @@ export default Ember.ObjectController.extend({
         this.get('model').save().then(function(){
       this.transitionToRoute('posts');
       }.bind(this));
-    }
+    },
   }
 });
